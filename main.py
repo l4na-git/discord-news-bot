@@ -1,7 +1,13 @@
 import json
+import os
 from urllib.request import Request, urlopen
 
+from dotenv import load_dotenv
 from parse import main
+
+load_dotenv()
+
+WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 
 def post_discord(message: str, webhook_url: str):
@@ -21,6 +27,5 @@ def post_discord(message: str, webhook_url: str):
 
 
 if __name__ == "__main__":
-    webhook_url = '<url>'
     message = main()
-    post_discord(message, webhook_url)
+    post_discord(message, WEBHOOK_URL)
