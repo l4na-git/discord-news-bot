@@ -3,8 +3,6 @@ from urllib.request import Request, urlopen
 
 from parse import main
 
-NEWS_URL = 'https://techfeed.io/feeds/categories/all'
-
 
 def post_discord(message: str, webhook_url: str):
     headers = {
