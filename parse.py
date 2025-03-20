@@ -42,6 +42,6 @@ def main():
     ranking = extract_ranking(data)
     show_rankings = format_ranking(ranking)
 
-    title = f'## {date.today()}  TechFeedのランキング'
+    title = f'## {date.today()}  TechFeedのおすすめ記事'
     message = '\n'.join([title] + show_rankings)
     return message
