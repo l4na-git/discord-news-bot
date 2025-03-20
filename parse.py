@@ -4,6 +4,7 @@ from datetime import date
 import feedparser
 
 NEWS_URL = 'https://techfeed.io/feeds/categories/all'
+NEWS_TITLE = 'TechFeedのおすすめ記事'
 
 
 def fetch_news(url: str):
@@ -42,6 +43,6 @@ def main():
     ranking = extract_ranking(data)
     show_rankings = format_ranking(ranking)
 
-    title = f'## {date.today()}  TechFeedのおすすめ記事'
+    title = f'## {date.today()}  {NEWS_TITLE}'
     message = '\n'.join([title] + show_rankings)
     return message
